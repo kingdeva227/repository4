@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>ResumeBuilder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                <h3>Resume Builder</h3>
+            </div>
+            <div class="card-body">
+                <table  class= "table" border="1">
+                    <tr>
+                        <th>RESUME ID</th>
+                        <th>NAME</th>
+                       
+                    </tr>
+                    <tr th:each="ob:${list}">
+                        <td th:text="${ob.id}"></td>
+                        <td th:text="${ob.name}"></td>
+
+                        <td> 
+                          
+                          <a th:href="@{/pdf(id=${ob.id})}" class="btn btn-info">PDF</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer bg-info text-center ">
+                <span class="text-white">@Devaraju polasi</span>
+            </div>
+            <!--card footer end-->
+        </div>
+        <!--cardend-->
+    </div>
+    <!--container end-->
+</body>
+
+</html>

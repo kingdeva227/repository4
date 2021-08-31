@@ -1,0 +1,206 @@
+<html>
+
+<head>
+    <title>ResumeBuilder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                <h3>Resume Builder</h3>
+            </div>
+            <div class="card-body">
+<form th:action="@{save}" method="POST">                    <!-- Row#1 -->
+                    <!-- Row#1 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" name="name" id="name" class="form-control" />
+                        </div>
+                        <div class="col-5">
+                            <span id="nameError"> </span>
+                        </div>
+                    </div>
+                    <!-- Row#2 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="email">email</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" name="email" id="email" class="form-control" />
+                        </div>
+                        <div class="col-5">
+                            <span id="emailError"> </span>
+                        </div>
+                    </div>
+                    <!-- Row#3 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="mobileNumber">Mobile Number</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" name="mobileNumber" id="mobileNumber" class="form-control" />
+                        </div>
+                        <div class="col-5">
+                            <span id="mobileNumberError"> </span>
+                        </div>
+                    </div>
+
+                    <!-- Row#4 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="careerObjective">Career Objective</label>
+                        </div>
+                        <div class="col-4">
+
+                            <textarea type="text" name="careerObjective" id="careerObjective"
+                                class="form-control"></textarea>
+                        </div>
+                        <div class="col-5">
+                            <span id="careerObjectiveError"> </span>
+                        </div>
+                    </div>
+                    <p>Academic Qualifications</p>
+                    <!-- Row#5 -->
+                    <div class="row">
+                    
+                        <div class="col-9">
+                            <table class="table table-borderless">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Course</th>
+                                    <th scope="col">Institute</th>
+                                    <th scope="col">University</th>
+                                    <th scope="col">Duration</th>
+                                    <th scope="col">Percentage</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row"><input type="text" name="course1" id="course1" class="form-control" /></th>
+                                    <td><input type="text" name="institute1" id="institute11" class="form-control" /></td>
+                                    <td><input type="text" name="university1" id="university1" class="form-control" /></td>
+                                    <td><input type="text" name="duration1" id="duration1" class="form-control" /></td>
+                                    <td><input type="text" name="percentage1" id="percentage1" class="form-control" /></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row"><input type="text" name="course2" id="course2" class="form-control" /></th>
+                                    <td><input type="text" name="institute2" id="institute2" class="form-control" /></td>
+                                    <td><input type="text" name="university2" id="university2" class="form-control" /></td>
+                                    <td><input type="text" name="duration2" id="duration2" class="form-control" /></td>
+                                    <td><input type="text" name="percentage2" id="percentage2" class="form-control" /></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row"><input type="text" name="course3" id="course3" class="form-control" /></th>
+                                    <td><input type="text" name="institute3" id="institute3" class="form-control" /></td>
+                                    <td><input type="text" name="university3" id="university3" class="form-control" /></td>
+                                    <td><input type="text" name="duration3" id="duration3" class="form-control" /></td>
+                                    <td><input type="text" name="percentage3" id="percentage3" class="form-control" /></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-3">
+                            <span id="qualificationError"> </span>
+                        </div>
+                    </div>
+                    <!-- Row#6 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="strengths">Strengths</label>
+                        </div>
+                        <div class="col-4">
+
+                            <input type="text" name="strengths" id="strengths:"
+                                class="form-control"/>
+                        </div>
+                        <div class="col-5">
+                            <span id="strengthsError"> </span>
+                        </div>
+                    </div>
+                    <!-- Row#7 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="technicalSkill">Technical Skills</label>
+                        </div>
+                        <div class="col-4">
+
+                            <input type="text" name="technicalSkill" id="technicalSkill"
+                                class="form-control"/>
+                        </div>
+                        <div class="col-5">
+                            <span id="technicalSkillError"> </span>
+                        </div>
+                    </div>
+                     <!-- Row#8 -->
+                     <div class="row">
+                        <div class="col-3">
+                            <label for="fatherName">Father Name</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" name="fatherName" id="fatherName" class="form-control" />
+                        </div>
+                        <div class="col-5">
+                            <span id="fatherNameError"> </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row#9 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="dateOfBirth">Date of Birth</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" name="dateOfBirth" id="dateOfBirth" class="form-control" />
+                        </div>
+                        <div class="col-5">
+                            <span id="dateOfBirthError"> </span>
+                        </div>
+                    </div>
+                    <!-- Row#10 -->
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="languages">Languages</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" name="languages" id="languages" class="form-control" />
+                        </div>
+                        <div class="col-5">
+                            <span id="languagesError"> </span>
+                        </div>
+                    </div>
+                     <!-- Row#11     -->
+                     <div class="row">
+                        <div class="col-3">
+                            <label for="address">Address</label>
+                        </div>
+                        <div class="col-4">
+
+                            <textarea type="text" name="address" id="Address"
+                                class="form-control"></textarea>
+                        </div>
+                        <div class="col-5">
+                            <span id="addressError"> </span>
+                        </div>
+                    </div>
+                    <input type="submit" value="Next" class="btn btn-success" />
+
+                </form>                    
+               
+            </div>
+            <div class="card-footer bg-info text-center ">
+             <span th:text="${message}"></span>
+                <span class="text-white">@Devaraju polasi</span>
+            </div>
+            <!--card footer end-->
+        </div>
+        <!--cardend-->
+    </div>
+    <!--container end-->
+</body>
+
+</html>
